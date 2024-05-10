@@ -1,0 +1,57 @@
+.container {
+    background-color: #DAE5F5;
+    width: 75%;
+    height: 100vh;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    background-color: #001F8B;
+    color: #FFFFFF;
+    padding: 1px;
+    height: 10vh;
+}
+
+.messageDiv {
+    height: 65vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #FFFFFF #D9D9D9;
+}
+
+.input {
+    position: fixed;
+    bottom: 0;
+    background-color: #001F8B;
+    height: 25vh;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 12px;
+}
+
+.textArea {
+    width: 93%;
+    height: 70%;
+    resize: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.btn {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.sendBtn {
+    width: 30px;
+    background-color: #FFFFFF;
+    border: none;
+    mix-blend-mode: multiply;
+}

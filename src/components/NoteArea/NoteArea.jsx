@@ -5,6 +5,9 @@ import SendEnable from "../../assets/send_enable.png";
 import useNote from "../../context/NoteContext";
 import { useEffect, useState } from "react";
 import RightColumn from "../RightColumn/RightColumn";
+import Note from "../Note/Note";
+import Arrow from "../../assets/arrow.png";
+import styles from "./NoteArea.module.css";
 
 function NoteArea() {
     const { noteTitles, setNoteTitles, selectedGroup, hide, setHide, isMobile } = useNote();
@@ -51,27 +54,19 @@ function NoteArea() {
     }
 
     return (
-        <div style={{ backgroundColor: "#DAE5F5", width: "75%", height: "100vh" }}>
-            <div style={{ display: "flex", backgroundColor: "#001F8B", color: "#FFFFFF", padding: "1px", height: "10vh" }}>
+        <div className={styles.container} style={{ display: !hide && isMobile && "none" }}>
+            <div className={styles.arrow}>
+                {isMobile && (
+                    <div style={{ marginLeft: "10px" }} onClick={() => setHide(isMobile && false)}>
+                        <img src={Arrow} alt="back-button" />
+                    </div>
+                )}
                 <NoteTitle noteTitle={selectedGroup} isOpen={true} />
             </div>
-            <div style={{ height: "65vh", overflowY: "auto", scrollbarWidth: "thin", scrollbarColor: "#FFFFFF #D9D9D9" }}>
-                {messages && messages.map(message => {
-                    return (
-                        <div key={message.time} style={{ backgroundColor: "#FFFFFF", margin: "1.5rem 2rem", borderRadius: "6px", boxShadow: "0px 4px 20px 0px #00000040" }}>
-                            <div style={{ padding: "1rem", lineHeight: "1.5rem" }}>{message.text}</div>
-                            <div style={{ display: "flex", justifyContent: "end" }}>
-                                <div style={{ color: "#353535", display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "small", fontWeight: "bold", paddingBottom: "1rem", paddingRight: "1rem" }}>
-                                    <div>{message.day}</div>
-                                    <div style={{ width: "6px", height: "6px", backgroundColor: "#353535", borderRadius: "50%" }}></div>
-                                    <div>{message.time}</div>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
+            <div className={styles.messageDiv}>
+                {messages && messages.map((message, index) => <Note key={index} message={message} />)}
             </div>
-            <div style={{ position: "fixed", bottom: "0", backgroundColor: "#001F8B", height: "25vh", width: "75%", display: "flex", justifyContent: "center", alignItems: "center", borderBottomLeftRadius: "12px" }}>
+            <div className={styles.input}>
                 <textarea
                     name="notes"
                     value={note}
@@ -79,16 +74,16 @@ function NoteArea() {
                     placeholder="Enter your text here..........."
                     rows={10}
                     cols={10}
-                    style={{ width: "93%", height: "70%", resize: "none", borderRadius: "8px", outline: "none", fontSize: "1.5rem", padding: "10px 20px" }}
+                    className={styles.textArea}
                 ></textarea>
                 <button
                     disabled={note.trim().length < 1}
                     onClick={handleClick}
-                    style={{ position: "absolute", bottom: "30px", right: "40px", cursor: "pointer" }}
+                    className={styles.btn}
                 >
                     {<img
                         src={note.trim().length > 0 ? SendEnable : SendDisable} alt="send"
-                        style={{ width: "30px", backgroundColor: "#FFFFFF", border: "none", mixBlendMode: "multiply" }}
+                        className={styles.sendBtn}
                     />}
                 </button>
             </div >
