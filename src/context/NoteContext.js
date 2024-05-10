@@ -1,14 +1,6 @@
 import { createContext, useContext } from "react";
 
-const initialState = {
-    noteTitle: {
-        name: "",
-        color: ""
-    },
-    setNoteTitle: () => { }
-};
-
-const NoteContext = createContext(initialState);
+const NoteContext = createContext();
 
 export const NoteContextProvider = NoteContext.Provider;
 

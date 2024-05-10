@@ -1,18 +1,53 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
+import useNote from "../../context/NoteContext";
 
-function Modal({ closeModal, groupName, setGroupName, color, setColor }) {
+//, groupName, setGroupName, color, setColor
+function Modal({ closeModal }) {
+    const { setNoteTitles } = useNote();
+
+    const [groupName, setGroupName] = useState("");
+    const [color, setColor] = useState();
+
+    const headerLetters = (groupTitle) => {
+        const words = groupTitle.split("");
+        let noteHeader;
+
+        if (words.length > 1) {
+            noteHeader = `${words[0][0]}${words[1][0]}`;
+        } else {
+            noteHeader = `${words[0][0]}`;
+        }
+
+        return noteHeader.toUpperCase();
+    };
+
     const handleClick = () => {
         const trimmedGroupName = groupName.trim();
+        const letters = headerLetters(trimmedGroupName);
         if (trimmedGroupName && color) {
-            if (!localStorage.getItem("groups")) localStorage.setItem("groups", JSON.stringify([]));
-            const groups = JSON.parse(localStorage.getItem("groups"));
-            const groupDetails = {
-                group: trimmedGroupName,
-                color,
-                messages: []
-            };
-            groups.push(groupDetails);
-            localStorage.setItem("groups", JSON.stringify(groups));
+            // if (!localStorage.getItem("groups")) localStorage.setItem("groups", JSON.stringify([]));
+            // const groups = JSON.parse(localStorage.getItem("groups"));
+            // setNoteTitles((t) => [
+            //     ...t,
+            //     {
+            //         group: trimmedGroupName,
+            //         color,
+            //         letters,
+            //         messages: []
+            //     }
+            // }])
+            setNoteTitles((t) => [
+                ...t,
+                {
+                    group: trimmedGroupName,
+                    color,
+                    letters,
+                    messages: []
+                }
+            ]);
+            // groups.push(groupDetails);
+            // localStorage.setItem("groups", JSON.stringify(groups));
             setGroupName("");
             setColor();
             closeModal();
