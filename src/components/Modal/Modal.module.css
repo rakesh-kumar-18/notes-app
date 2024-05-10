@@ -39,6 +39,10 @@
     align-items: center;
 }
 
+.label {
+    margin-right: 20px;
+}
+
 .color {
     border-radius: 50%;
     width: 26px;
@@ -58,4 +62,38 @@
     right: 20px;
     bottom: 10px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 70%;
+    }
+
+    .label {
+        margin-right: 10px;
+        font-size: medium;
+    }
+
+    .heading {
+        margin-right: 10px;
+        font-size: medium;
+    }
+
+    .input {
+        width: 10rem;
+        padding: 4px 8px;
+        border-radius: 10px;
+    }
+
+    .btn {
+        position: static;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .color {
+        width: 20px;
+        height: 20px;
+        margin: 0 2px;
+    }
 }

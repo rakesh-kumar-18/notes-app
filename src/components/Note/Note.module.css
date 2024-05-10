@@ -5,6 +5,11 @@
     box-shadow: 0px 4px 20px 0px #00000040;
 }
 
+.message {
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
 .time {
     color: #353535;
     display: flex;
@@ -21,4 +26,18 @@
     height: 6px;
     background-color: #353535;
     border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+    }
+
+    .message {
+        font-size: smaller;
+    }
+
+    .time {
+        font-size: smaller;
+    }
 }

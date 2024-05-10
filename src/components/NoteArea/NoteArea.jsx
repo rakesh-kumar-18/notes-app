@@ -55,7 +55,7 @@ function NoteArea() {
 
     return (
         <div className={styles.container} style={{ display: !hide && isMobile && "none" }}>
-            <div className={styles.arrow}>
+            <div className={styles.heading}>
                 {isMobile && (
                     <div style={{ marginLeft: "10px" }} onClick={() => setHide(isMobile && false)}>
                         <img src={Arrow} alt="back-button" />

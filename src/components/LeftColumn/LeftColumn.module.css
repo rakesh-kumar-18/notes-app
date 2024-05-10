@@ -33,3 +33,13 @@
     padding: 0 12px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 100vw;
+    }
+
+    .header {
+        width: 100vw;
+    }
+}

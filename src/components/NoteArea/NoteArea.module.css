@@ -4,12 +4,12 @@
     height: 100vh;
 }
 
-.arrow {
+.heading {
     display: flex;
     align-items: center;
     background-color: #001F8B;
     color: #FFFFFF;
-    padding: 1px;
+    padding: 4px 1px;
     height: 10vh;
 }
 
@@ -54,4 +54,29 @@
     background-color: #FFFFFF;
     border: none;
     mix-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+        border-bottom-left-radius: 0;
+    }
+
+    .textArea {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+    .btn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .sendBtn {
+        width: 20px;
+    }
 }
