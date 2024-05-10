@@ -3,7 +3,7 @@ import './App.css';
 import LeftColumn from './components/LeftColumn/LeftColumn';
 import { NoteContextProvider } from './context/NoteContext';
 // import NoteArea from './components/NoteArea';
-// import RightColumn from './components/RightColumn';
+import RightColumn from './components/RightColumn/RightColumn';
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -37,7 +37,7 @@ function App() {
     <div style={{ display: "flex" }}>
       <NoteContextProvider value={{ modal, setModal, noteTitles, setNoteTitles, selectedGroup, setSelecetedGroup, hide, setHide, isMobile, setIsMobile }}>
         <LeftColumn />
-        {/* <RightColumn /> */}
+        <RightColumn />
         {/* <NoteArea /> */}
       </NoteContextProvider>
     </div>

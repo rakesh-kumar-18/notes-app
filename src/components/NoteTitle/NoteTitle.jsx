@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import useNote from "../context/NoteContext";
+import useNote from "../../context/NoteContext";
 
 function NoteTitle({ noteTitle }) {
     const { isMobile, setHide, setSelecetedGroup } = useNote();

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import useNote from "../context/NoteContext";
-import NoteTitle from "./NoteTitle";
+import NoteTitle from "./NoteTitle/NoteTitle";
 
 function NoteArea() {
     const { noteTitle } = useNote();

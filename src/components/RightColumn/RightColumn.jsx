@@ -1,5 +1,5 @@
-import BgImage from "../assets/bg-image.png";
-import LockImg from "../assets/lock.png";
+import BgImage from "../../assets/bg-image.png";
+import LockImg from "../../assets/lock.png";
 
 function RightColumn() {
     return (

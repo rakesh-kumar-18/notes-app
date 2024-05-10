@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import { useState } from "react";
 import Modal from "../Modal/Modal";
-import NoteTitle from "../NoteTitle";
+import NoteTitle from "../NoteTitle/NoteTitle";
 import useNote from "../../context/NoteContext";
 
 function LeftColumn() {
