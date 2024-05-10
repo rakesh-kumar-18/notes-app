@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import LeftColumn from './components/LeftColumn/LeftColumn';
 import { NoteContextProvider } from './context/NoteContext';
-// import NoteArea from './components/NoteArea';
-import RightColumn from './components/RightColumn/RightColumn';
+import NoteArea from './components/NoteArea/NoteArea';
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -13,7 +12,7 @@ function App() {
     groups ? JSON.parse(groups) : ""
   );
 
-  const [selectedGroup, setSelecetedGroup] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState("");
   const [hide, setHide] = useState(false);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -35,10 +34,9 @@ function App() {
 
   return (
     <div style={{ display: "flex" }}>
-      <NoteContextProvider value={{ modal, setModal, noteTitles, setNoteTitles, selectedGroup, setSelecetedGroup, hide, setHide, isMobile, setIsMobile }}>
+      <NoteContextProvider value={{ modal, setModal, noteTitles, setNoteTitles, selectedGroup, setSelectedGroup, hide, setHide, isMobile, setIsMobile }}>
         <LeftColumn />
-        <RightColumn />
-        {/* <NoteArea /> */}
+        <NoteArea />
       </NoteContextProvider>
     </div>
   );

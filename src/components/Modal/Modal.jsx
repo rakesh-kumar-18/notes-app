@@ -10,7 +10,7 @@ function Modal({ closeModal }) {
     const [color, setColor] = useState();
 
     const headerLetters = (groupTitle) => {
-        const words = groupTitle.split("");
+        const words = groupTitle.split(" ");
         let noteHeader;
 
         if (words.length > 1) {
@@ -62,8 +62,8 @@ function Modal({ closeModal }) {
 
     return (
         <>
-            <div style={{ position: "fixed", left: "0", right: "0", top: "0", bottom: "0", backgroundColor: "#2F2F2FBF" }} onClick={closeModal}></div>
-            <div style={{ position: "fixed", backgroundColor: "#FFFFFF", top: "50%", left: "50%", transform: "translate(-50%, -50%)", padding: "10px 30px 20px", border: `3px solid ${color}`, borderRadius: "4px", fontSize: "larger" }}>
+            <div style={{ position: "fixed", left: "0", right: "0", top: "0", bottom: "0", backgroundColor: "#2F2F2FBF", zIndex: "1" }} onClick={closeModal}></div>
+            <div style={{ position: "fixed", backgroundColor: "#FFFFFF", top: "50%", left: "50%", transform: "translate(-50%, -50%)", padding: "10px 30px 20px", border: `3px solid ${color}`, borderRadius: "4px", fontSize: "larger", zIndex: "2" }}>
                 <div>
                     <p style={{ fontWeight: "bold" }}>Create New group</p>
                 </div>
