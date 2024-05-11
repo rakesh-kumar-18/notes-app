@@ -18,17 +18,17 @@ function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    const handleScreen = () => {
+    const toggleScreen = () => {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth > 768) {
         setHide(false);
       }
     };
 
-    window.addEventListener("resize", handleScreen);
+    window.addEventListener("resize", toggleScreen);
 
     return () => {
-      window.removeEventListener("resize", handleScreen);
+      window.removeEventListener("resize", toggleScreen);
     };
   }, []);
 

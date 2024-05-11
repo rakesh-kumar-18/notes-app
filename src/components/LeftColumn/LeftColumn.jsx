@@ -23,9 +23,7 @@ function LeftColumn() {
                 className={styles.btn}
                 onClick={() => setModal(true)}
             >+</button>
-            {modal && <Modal
-                closeModal={handleClick}
-            />}
+            {modal && <Modal closeModal={handleClick} />}
         </div>
     );
 }
